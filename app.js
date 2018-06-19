@@ -13,14 +13,14 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;        // set our port
+var port = process.env.PORT || 3000;        // set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-app.get('/', function(req, res) {
+app.get('/api', function(req, res) {
     res.json({ message: 'hooray! welcome to lin api!' });   
 });
 
@@ -33,5 +33,5 @@ app.get('/', function(req, res) {
 // START THE SERVER
 // =============================================================================
 app.listen(port,()=>{
-	console.log("started listening")	
+	console.log("Started listening...................")	
 });
