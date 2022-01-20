@@ -16,7 +16,7 @@ app.use(cors(
             {
                 'origin': 'https://127.0.0.1:4200',
                 'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-                'preflightContinue': false,
+                'preflightContinue': true,
                 'credentials': true
             }
 )); 
