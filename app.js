@@ -12,7 +12,14 @@ var cors = require('cors');
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors()); 
+app.use(cors(
+            {
+                'origin': 'https://localhost:4200',
+                'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+                'preflightContinue': false,
+                'credentials': true
+            }
+)); 
 var port = process.env.PORT || 3000;        // set our port
 
 // ROUTES FOR OUR API
