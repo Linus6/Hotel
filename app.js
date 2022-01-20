@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors(
             {
-                'origin': 'https://localhost:4200',
+                'origin': 'https://127.0.0.1:4200',
                 'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
                 'preflightContinue': false,
                 'credentials': true
