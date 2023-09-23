@@ -12,6 +12,7 @@ var cors = require('cors');
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+require('dotenv').config();
 app.use(cors(
             {
                 'origin': '*',
@@ -44,6 +45,6 @@ app.post('/api/*', function(req, res) {
 
 // START THE SERVER
 // =============================================================================
-app.listen(port,()=>{
-	console.log("Started listening...................")	
+app.listen(port, ()=>{
+	console.log("Hotel app started listening on PORT -> ",port)	
 });
