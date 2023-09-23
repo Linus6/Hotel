@@ -14,19 +14,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors(
             {
-                'origin': 'https://127.0.0.1:4200',
+                'origin': '*',
                 'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
                 'preflightContinue': true,
                 'credentials': true
             }
 )); 
-var port = process.env.PORT || 3000;        // set our port
+var port = process.env.PORT || 8080;        // set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+app.get('/healthcheck', function(req, res) {
+    res.json({ message: 'Welcome to linus application - Hotel -> '+new Date()});   
+});
 app.get('/api/*', function(req, res) {
     res.json({ message: 'hooray! welcome to lin api! , Method get' });   
 });
